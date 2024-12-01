@@ -1,20 +1,12 @@
 interface Props {
-  showAlert: boolean;
+  onClick: () => void;
+  children: string;
 }
 
-const Button = ({ showAlert }: Props) => {
-  const onButtonPress = () => {
-    showAlert = !showAlert;
-  };
-
+const Button = ({ onClick }: Props) => {
   return (
     <>
-      <button
-        className="btn btn-danger"
-        onClick={() => {
-          onButtonPress();
-        }}
-      >
+      <button onClick={onClick} className="btn btn-danger">
         Button
       </button>
     </>
